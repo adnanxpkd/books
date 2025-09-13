@@ -1,0 +1,149 @@
+{% comment %} {% extends 'base.html'%}
+{% block content%} {% endcomment %}
+
+        {% comment %} <h1 align="center">Welcome to the Ebooks Library</h1>
+        <h2>This is the home page of the Ebooks Library.</h2>
+
+        <nav>
+                <ul>
+                    <li><a href="{% url 'home'%}">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="{% url 'about'%}">About</a></li>
+                    <li><a href="{% url 'social'%}">Social Media</a></li>
+                    <li><a href="{% url 'contacts'%}">Contacts</a></li>
+                </ul>
+        </nav> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Library</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+    }
+
+    /* Navbar */
+    nav {
+      background: rgba(0,0,0,0.8);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      font-size: 24px;
+      letter-spacing: 2px;
+      color: #1abc9c;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+    }
+
+    /* Hero section */
+    .hero {
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #1abc9c;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #16a085;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>📚 E-Library</h1>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'social' %}">Social Media</a></li>
+      <li><a href="{% url 'success_page' %}">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to E-Library</h2>
+    <p>Manage your E-Books and Audiobooks in one place.  
+       Add, edit, delete, and explore with ease.</p>
+
+    <!-- Buttons -->
+    <a href="{% url 'ebook_add' %}" class="btn">➕ Add E-Book</a>
+    <a href="{% url 'ebook_list' %}" class="btn">📖 View E-Books</a>
+    <a href="{% url 'audiobook_add' %}" class="btn">🎧 Add Audiobook</a>
+    <a href="{% url 'audiobook_list' %}" class="btn">🎶 View Audiobooks</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 E-Library | Built with ❤️ using Django
+  </footer>
+
+</body>
+</html>
+
+
+        {% comment %} {%endblock%} {% endcomment %}

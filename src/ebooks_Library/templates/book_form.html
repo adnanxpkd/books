@@ -1,0 +1,37 @@
+{% comment %} <form method='post'>
+    {% csrf_token %}
+    {{frm.as_p}}
+    <button type='submit'>Submit</button>
+</form>  {% endcomment %}
+<div class="form-container">
+    <div class="form-header">
+        <h1>📚 Book Form</h1>
+        <p>Add or edit book details</p>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="success-message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    {% if form.non_field_errors %}
+        <ul class="errorlist nonfield">
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="post" id="bookForm">
+        {% csrf_token %}
+        {{ frm.as_p }}
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                💾 Submit
+            </button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+ {% block content %}
+
+<h2>Add books</h2>
+        <form method="post">
+          {% csrf_token %}
+        {{frm.as_p}}
+        TITLE : <input type="text" name="title"></input>
+        AUTHOR : <input type="text" name="author"></input>
+        YEAR : <input type="number" name="year"></input>
+        PUBLISHER : <input type="text" name="publisher"></input>
+
+        <button type="submit">CREATE</button>
+        </form>
+{% endblock content %}

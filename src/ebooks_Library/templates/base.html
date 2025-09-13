@@ -1,0 +1,18 @@
+{% load static %}
+        {% comment %} <header>{{company_name}}</header> {% endcomment %}
+        {% comment %} <img src="{% static 'IMAGES/adnan.jpg' %}" alt="Logo" style="width:120px; height:auto;" /> {% endcomment %}
+        
+        <img src="{% static 'IMAGES/adnan.png' %}" 
+            alt="Logo" 
+            style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #333;" />  
+
+        <main>
+            {% block content %}
+            {% endblock %}
+
+        
+        </main>
+        <img src="{% static 'IMAGES/adnan.png' %}" 
+            alt="Logo" 
+            style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #333;" />  
+        {% comment %} <footer>{{company_name}}</footer> {% endcomment %}

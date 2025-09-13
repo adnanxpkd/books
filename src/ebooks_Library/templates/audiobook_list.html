@@ -1,0 +1,21 @@
+<table border="1px">
+    <tr>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>CATEGORY</th>
+        <th>DESCRIPTION</th>
+        <th>EDIT</th>
+    </tr>
+    {% for i in audiobooks %}
+    <tr>
+        <td>{{ i.title }}</td>
+        <td>{{ i.author }}</td>
+        <td>{{ i.category}}</td>
+        <td>{{ i.description}}</td>
+        <td><a href="{% url 'audiobookupdate' i.pk%}">EDIT</a></td>
+        {% comment %} <td><a href="{% url 'audiobookdelete' i.pk%}">DELETE</a></td> {% endcomment %}
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'audiobook_add' %}">ADD AUDIOEBOOK</a>
